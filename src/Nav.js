@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 const Nav = ({ search, setSearch }) => {
 	return (
 		<nav className="Nav">
-			<form className="SearchForm" onSubmit={(e) => e.preventDefault()}>
+			<form className="searchForm" onSubmit={(e) => e.preventDefault()}>
 				<label htmlFor="search">Search Posts</label>
 				<input
 					id="search"
 					type="text"
 					required
+					placeholder="Search Posts"
 					value={search}
 					onChange={(e) => setSearch(e.target.value)}
 				/>
