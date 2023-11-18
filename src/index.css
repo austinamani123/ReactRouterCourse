@@ -28,7 +28,7 @@ body {
 
 .App {
 	width: 100%;
-	max-width: 800px;
+	max-width: 550px;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -38,7 +38,15 @@ body {
 	box-shadow: 0px 0px 15px gray;
 }
 
-.Header,
+.Header {
+	width: 100%;
+	background-color: #66d8f5;
+	padding: 12px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .Footer {
 	width: 100%;
 	background-color: #66d8f5;
@@ -49,7 +57,7 @@ body {
 }
 
 .Header h1 {
-	font-size: 1.5rem;
+	font-size: 12px;
 }
 
 .Header svg {
@@ -57,7 +65,7 @@ body {
 }
 
 .Footer {
-	padding: 0.75rem;
+	padding: 10px;
 	display: grid;
 	place-content: center;
 }
@@ -100,12 +108,12 @@ body {
 }
 
 .Nav li {
-	padding: 1rem;
+	padding: 12px;
 }
 
 .Nav li:hover,
 .Nav li:focus {
-	padding: 1rem;
+	padding: 12px;
 }
 
 .Nav li a {
@@ -139,13 +147,14 @@ body {
 }
 
 .post {
-	margin-top: 1rem;
-	padding-bottom: 1rem;
+	margin-top: 6px;
+	padding-bottom: 6px;
 	border-bottom: 1px solid lightgray;
 }
 
 .Home .post a {
 	text-decoration: none;
+	font-size: 18px;
 }
 
 .Home .post a,
@@ -167,7 +176,7 @@ body {
 }
 
 .postBody {
-	margin: 1rem 0;
+	margin: 4px 0;
 }
 
 .newPostForm {
