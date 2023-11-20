@@ -13,6 +13,7 @@ const Nav = ({ search, setSearch }) => {
 					value={search}
 					onChange={(e) => setSearch(e.target.value)}
 				/>
+				</form>
 				<ul>
 					<li>
 						<Link to="/">Home</Link>
@@ -24,7 +25,7 @@ const Nav = ({ search, setSearch }) => {
 						<Link to="about">About</Link>
 					</li>
 				</ul>
-			</form>
+			
 		</nav>
 	);
 };
