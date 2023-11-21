@@ -50,22 +50,32 @@ function App() {
 		fetchPosts();
 	}, []);
 
-	const handleDelete = (id) => {
-		const postsList = posts.filter((post) => post.id !== id);
-		setPosts(postsList);
-		history.push('/');
+	const handleDelete = async (id) => {
+		try {
+			await api.delete(`/posts/${id}`);
+			const postsList = posts.filter((post) => post.id !== id);
+			setPosts(postsList);
+			history.push('/');
+		} catch (err) {
+			console.log(`Error: ${err.message}`);
+		}
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
 		const datetime = format(new Date(), 'MMMM dd, yyyy pp');
 		const newPost = { id, title: postTitle, datetime, body: postBody };
-		const allPosts = [...posts, newPost];
-		setPosts(allPosts);
-		setPostTitle('');
-		setPostBody('');
-		history.push('/');
+		try {
+			const response = await api.post('/posts', newPost);
+			const allPosts = [...posts, response.data];
+			setPosts(allPosts);
+			setPostTitle('');
+			setPostBody('');
+			history.push('/');
+		} catch (err) {
+			console.log(`Error: ${err.message}`);
+		}
 	};
 
 	return (
