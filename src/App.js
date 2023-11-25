@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import api from './api/posts';
 import EditPost from './EditPost';
+import useWindowSize from './Hooks/useWindowSize';
 
 function App() {
 	const [search, setSearch] = useState('');
@@ -20,6 +21,7 @@ function App() {
 	const [editTitle, setEditTitle] = useState('');
 	const [editBody, setEditBody] = useState('');
 	const [posts, setPosts] = useState([]);
+	const { width } = useWindowSize();
 
 	useEffect(() => {
 		const filteredResults = posts.filter(
@@ -97,7 +99,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<Header title="React JS Blog" />
+			<Header title="React JS Blog" width={width} />
 			<Nav search={search} setSearch={setSearch} />
 			<Switch>
 				<Route exact path="/">
