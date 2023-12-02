@@ -205,6 +205,10 @@ body {
 	cursor: pointer;
 }
 
+.newPostForm button:hover {
+	background-color: lime;
+}
+
 .Missing h2,
 .PostPage h2,
 .Missing p,
